@@ -6,6 +6,9 @@ RUN apt update && \
   chmod +x /usr/bin/wait-for
 
 WORKDIR /usr/src/app
-COPY . .
+COPY package*.json ./
+COPY index.js ./
+
+RUN npm install
 
 USER node

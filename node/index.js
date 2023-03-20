@@ -6,8 +6,6 @@ const config = {
   password: 'root',
   database: 'appdb'
 }
-const connection = mysql.createConnection(config);
-
 async function query(sql) {
   const connection = mysql.createConnection(config);
 
@@ -58,7 +56,7 @@ async function init() {
     res.send(html);
   });
 
-  app.listen(3000, () => {
+  app.listen(port, () => {
     console.log('Server running on port 3000');
   });
 }

@@ -18,6 +18,8 @@ services:
       context: node
     volumes:
       - ./node:/usr/src/app
+      - /usr/src/app/node_modules
+
     tty: true
     container_name: app
     entrypoint: wait-for db:3306 -t 40 -- node index.js
